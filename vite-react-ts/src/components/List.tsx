@@ -1,21 +1,13 @@
-
-
 type ItemsType = {
-    items: string[]
-}
+  items: string[];
+};
 
-
-export const List = ({items}: ItemsType) => {
+export const List = ({ items }: ItemsType) => {
   return (
-
-   <ul>
-
-        {items.map((item) =>{
-            <li>{item}</li>
-        })}
-
-
-
-   </ul>
-  )
-}
+    <ul>
+      {items.map((item, index) => (
+        <li key={index}>{item}</li>
+      ))}
+    </ul>
+  );
+};

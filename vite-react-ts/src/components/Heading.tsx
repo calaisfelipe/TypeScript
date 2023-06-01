@@ -1,7 +1,8 @@
 import React, { ReactElement } from 'react'
 
 
-type HeadingProps = {title: string}
+type HeadingProps = {
+  title: string}
 
 type styledType = {
     [key:string]: string

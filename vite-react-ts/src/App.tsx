@@ -4,6 +4,7 @@ import { Section } from "./components/Section";
 import { Counter } from "./components/Counter";
 import { List } from "./components/List";
 
+
 function App() {
 
   const listoffood: string[] = ["coffe", "pizza", "hamburguer"]
@@ -18,6 +19,8 @@ function App() {
       <Counter />
 
       <List items={listoffood} />
+
+    
     </>
   );
 }
