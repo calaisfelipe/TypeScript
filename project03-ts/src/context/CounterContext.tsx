@@ -1,6 +1,11 @@
-import {useReducer, createContext} from 'react'
+import {useReducer, createContext, ReactNode, ReactElement} from 'react'
 
-const initialState = 0
+type StateType = {
+  count: number;
+  text: string;
+}
+
+export const initStat : StateType = 0
 
  const useCounterContext = (initialState = 0) => {
 
@@ -24,7 +29,26 @@ const initialState = 0
   return {state, dispatch}
 }
 
+
+
 type UseCounterContextType = ReturnType<typeof useCounterContext>
 
+type ChildrenType = {
+  children?: ReactElement | undefined
+}
 
-export const CounterContext = createContext<UseCounterContextType>({state,dispatch})
+
+
+const initContextState: UseCounterContextType = {
+  state: initState,
+  dispatch: () => { },
+}
+
+
+export const CounterContext = createContext<UseCounterContextType>(initContextState)
+
+export const CounterProvider = ({children, ...initState } :ChildrenType & StateType ): ReactNode => {
+ return  <CounterContext.Provider value={useCounterContext(initState)}>
+  {children}
+  </CounterContext.Provider>
+}
