@@ -12,6 +12,7 @@ import { List } from "./components/generics/List";
 import { RandomNumber } from "./components/restriction/RandomNumber";
 import { Toast } from "./components/templateLiterals/Toast";
 import { Button } from "./components/html/Button";
+import { Text } from "./components/polymorphic/Text";
 
 function App() {
   return (
@@ -37,8 +38,11 @@ function App() {
         
         <RandomNumber value={2} isPositive={true}  />
         <Toast position="center-bottom" />
-        <Button variant='secondary' onClick={() => console.log('clicked')}>Teste</Button>
+        <Button variant='secondary' onClick={() => console.log('clicked')} style={{backgroundColor:'#007bff', color:'#fff', padding:'10px'}}>Teste</Button>
         </div>
+
+        <Text color='secondary' size="md" variant="h4">POLIMORPHIC EXAMPLE</Text>
+       
 
       </UserContextProvider>
     </ThemeProvider>
